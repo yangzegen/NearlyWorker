@@ -9,22 +9,56 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page6">
-  <form id="search-form3">
-    <img src="assets/img/NmIFmN2gQre2lVIh8QmY_logo.PNG" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
-    <ion-item id="search-input6">
-      <ion-label>
-        Postcode:
-      </ion-label>
-      <ion-input type="text" placeholder="example: 2000"></ion-input>
-    </ion-item>
-    <ion-item id="search-input7">
-      <ion-label>
-        Skill:
-      </ion-label>
-      <ion-input type="text" placeholder="example: computer"></ion-input>
-    </ion-item>
-  </form>
-  <button id="search-button4" ion-button color="positive" block>
-    Search
-  </button>
+
+      <img src="assets/img/NmIFmN2gQre2lVIh8QmY_logo.PNG" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+
+      <ion-item>
+        <ion-label>
+          Postcode:
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="postcode" (change)="filterGreaterThan('postcode', postcode)" placeholder="example: 2000"></ion-input>
+      </ion-item>
+      <button ion-button block>
+        Filter Remove
+      </button>
+      <ion-item>
+        <ion-label>
+          Skill:
+        </ion-label>
+        <ion-input type="string" [(ngModel)]="skill" (change)="filterGreaterThan1('skill', skill)" placeholder="example: computer"></ion-input>
+      </ion-item>
+
+    <button ion-button block>
+      Filter Remove
+    </button>
+    <ion-card *ngFor="let worker of filteredworkers | async">
+
+      <ion-item>
+        <h2>{{worker.name}}</h2>
+      </ion-item>
+
+      <ion-card-content>
+      <h2>Skill: {{worker.skill}}</h2>
+      <h2>Postcode: {{worker.postcode}}</h2>
+      <h2>Phone: {{worker.phone}}</h2>
+      <h2>Email: {{worker.email}}</h2>
+      </ion-card-content>
+
+      <ion-row>
+    <ion-col>
+      <button ion-button icon-start clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-start clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>Comments</div>
+      </button>
+    </ion-col>
+    </ion-row>
+
+    </ion-card>
+
 </ion-content>

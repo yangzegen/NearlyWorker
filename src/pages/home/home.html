@@ -11,13 +11,35 @@
 <ion-content padding id="page1">
   <img src="assets/img/NmIFmN2gQre2lVIh8QmY_logo.PNG" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
 
-  <ion-list>
-    <ion-list-header>
-      Workers
-    </ion-list-header>
-    <ion-item *ngFor="let worker of WorkerList$ | async">
-      {{worker.name}}
+  <ion-card *ngFor="let worker of WorkerList$ | async">
+
+    <ion-item>
+      <h2>{{worker.name}}</h2>
     </ion-item>
-  </ion-list>
+
+    <ion-card-content>
+    <h2>Skill: {{worker.skill}}</h2>
+    <h2>Postcode: {{worker.postcode}}</h2>
+    <h2>Phone: {{worker.phone}}</h2>
+    <h2>Email: {{worker.email}}</h2>
+    </ion-card-content>
+
+    <ion-row>
+  <ion-col>
+    <button ion-button icon-start clear small>
+      <ion-icon name="thumbs-up"></ion-icon>
+      <div>Likes</div>
+    </button>
+  </ion-col>
+  <ion-col>
+    <button ion-button icon-start clear small>
+      <ion-icon name="text"></ion-icon>
+      <div>Comments</div>
+    </button>
+  </ion-col>
+</ion-row>
+
+  </ion-card>
 
 </ion-content>
+

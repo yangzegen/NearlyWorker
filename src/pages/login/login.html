@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page4">
+    <img src="assets/img/NmIFmN2gQre2lVIh8QmY_logo.PNG" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+    <ion-item>
+      <ion-label>
+        Email
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Password
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <div class="spacer" style="height:40px;" id="login-spacer1"></div>
+    <button id="login-button1" ion-button block color="stable" (click)="login(user)">
+      Log in
+    </button>
+    <button id="login-button2" ion-button clear color="positive" block on-click="goToSignup()">
+      Or create an account
+    </button>
+</ion-content>

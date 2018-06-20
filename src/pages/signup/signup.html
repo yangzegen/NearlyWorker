@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Signup
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+    <img src="assets/img/NmIFmN2gQre2lVIh8QmY_logo.PNG" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+      <ion-item>
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Password
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <div class="spacer" style="height:40px;" id="login-spacer1"></div>
+    <button id="signup-button3" ion-button block color="stable" (click)="register(user)">
+      Sign up
+    </button>
+</ion-content>

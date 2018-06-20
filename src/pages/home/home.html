@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page1">
+  <img src="assets/img/NmIFmN2gQre2lVIh8QmY_logo.PNG" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+
+  <ion-list>
+    <ion-list-header>
+      Workers
+    </ion-list-header>
+    <ion-item *ngFor="let worker of WorkerList$ | async">
+      {{worker.name}}
+    </ion-item>
+  </ion-list>
+
+</ion-content>

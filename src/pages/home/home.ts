@@ -3,6 +3,8 @@ import { NavController, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 import { Worker } from "../../models/worker/worker.model";
 import { WorkerListService } from '../../services/worker-list/worker-list.service';
 
